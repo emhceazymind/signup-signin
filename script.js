@@ -111,6 +111,7 @@
         let loginPassword = document.getElementById('loginPassword').value.trim();
 
         if (!loginEmail || !loginPassword) {
+            document.getElementById('input').value = '';
             alert('Please enter both email and password.');
             return;
         }
@@ -131,7 +132,12 @@
         handleLoading(event.target.querySelector('button[type="submit"]'), signUp);
     });
 
-    loginForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        handleLoading(event.target.querySelector('button[type="submit"]'), loginUser);
+    
+loginForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    handleLoading(event.target.querySelector('button[type="submit"]'), () => {
+        loginUser();
+        document.getElementById('input').value = '';
+        loginForm.reset(); 
     });
+});
