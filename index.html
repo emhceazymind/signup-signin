@@ -13,10 +13,6 @@
             <form action="#" id="loginForm">
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="username" placeholder="Username" id="userName" required>
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <div class="input-box">
                     <input type="email" placeholder="Email" id="loginEmail" required>
                     <i class="fa-solid fa-envelope"></i>
                 </div>
@@ -27,7 +23,7 @@
                 <div class="forget-link">
                     <a href="#">Forgot Password?</a>
                 </div>
-                <button type="button" class="btn" onclick="handleLogin()">Login</button>
+                <button type="submit" class="btn">Login</button>
                 <p>or login with social platform</p>
                 <div class="social-icons">
                     <a href="#"><i class="fa-brands fa-google"></i></a>
@@ -42,7 +38,7 @@
             <form action="#" id="registerForm">
                 <h1>Registration</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" id="registerUsername" required>
+                    <input type="name" placeholder="Name" id="registerName" required>
                     <i class="fa-solid fa-user"></i>
                 </div>
                 <div class="input-box">
@@ -62,7 +58,7 @@
                         <input type="checkbox" id="terms" required> I agree to the terms and conditions
                     </label>
                 </div>
-                <button type="button" class="btn" onclick="handleRegistration()">Register</button>
+                <button type="submit" class="btn">Register</button>
                 <p>or register with social platform</p>
                 <div class="social-icons">
                     <a href="#"><i class="fa-brands fa-google"></i></a>
@@ -102,5 +98,5 @@
     </div>
     <div id="messageBox" class="message-box"></div>
     <script src="script.js"></script>
-</body>
+    </body>
 </html>
