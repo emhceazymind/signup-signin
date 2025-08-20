@@ -1,4 +1,4 @@
-    let container = document.querySelector('.container');
+let container = document.querySelector('.container');
     let loginBtn = document.querySelector('.login-btn');
     let registerBtn = document.querySelector('.register-btn');
 
@@ -116,11 +116,14 @@
             return;
         }
 
-        let userFound = database.find(user => user.email === loginEmail && user.password === loginPassword);
+        let userFoundIndex = database.findIndex(user => user.email === loginEmail && user.password === loginPassword);
+        let userFound = database[userFoundIndex];
 
         if (userFound) {
             alert(`Welcome back, ${userFound.name}! Login successful.`);
+            localStorage.setItem('authUserIndex', JSON.stringify(userFoundIndex));
             loginForm.reset();
+            window.location.href = 'dashboard.html';
         } else {
             alert('Invalid credentials. Please check your email and password.');
         }
